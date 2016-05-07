@@ -11,10 +11,11 @@ import com.arctouch.beerbind.BR;
 
 public class NameViewModel extends BaseObservable {
 
-    private NameView nameView;
+    public final String nameHintText = "Digite seu nome aqui"; //TODO get from resources
+    public final String enterButtonText = "Enter"; //TODO get from resources
 
+    private NameView nameView;
     private String name;
-    private String nameHintText = "Digite seu nome aqui"; //TODO get from resources
 
     public NameViewModel(NameView view) {
         this.nameView = view;
@@ -28,11 +29,6 @@ public class NameViewModel extends BaseObservable {
     public void setName(String name) {
         this.name = name;
         notifyPropertyChanged(BR.name);
-        Log.i("hi", "property name changed to " + this.name);
-    }
-
-    public String getNameHintText() {
-        return nameHintText;
     }
 
     public void onClickEnter(View view) {

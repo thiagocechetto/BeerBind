@@ -14,7 +14,9 @@ import com.bumptech.glide.Glide;
 
 public class BeerCountViewModel extends BaseObservable {
 
-    private String beerCountLabel = "Quantas cervejas você bebeu?"; //TODO get from resources
+    public final int maxBeersBeforeDie = 20;
+    public final String beerCountLabel = "Quantas cervejas você bebeu?"; //TODO get from resources
+
     private BeerCountModel beerCountModel;
 
     public BeerCountViewModel(BeerCountModel beerCountModel) {
@@ -36,10 +38,6 @@ public class BeerCountViewModel extends BaseObservable {
     @Bindable
     public String getBeerCountText() {
         return Integer.toString(beerCountModel.getBeerCount());
-    }
-
-    public String getBeerCountLabel() {
-        return beerCountLabel;
     }
 
     public TextWatcher getBeerCountTextWatcher() {

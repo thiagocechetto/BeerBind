@@ -13,10 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:paddingBottom="@dimen/activity_vertical_margin"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/activity_vertical_margin"
+        android:padding="@dimen/activity_vertical_margin"
         tools:context=".name.NameActivity">
 
         <TextView
@@ -35,19 +32,17 @@
         <SeekBar
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:max="20"
+            android:max="@{beerViewModel.maxBeersBeforeDie}"
             app:onSeekBarChangeListener="@{beerViewModel.beerCountSeekListener}"
             app:progress="@{beerViewModel.beerCount}"
 
             />
 
         <ImageView
-            android:id="@+id/beer_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="@dimen/default_margin"
             app:imageUrl="@{beerViewModel.imageUrl}" />
 
     </LinearLayout>
-
 </layout>
