@@ -9,10 +9,16 @@ import android.view.View;
 
 import com.arctouch.beerbind.BR;
 
-public class NameViewModel extends BaseObservable{
+public class NameViewModel extends BaseObservable {
+
+    private NameView nameView;
 
     private String name;
     private String nameHintText = "Digite seu nome aqui"; //TODO get from resources
+
+    public NameViewModel(NameView view) {
+        this.nameView = view;
+    }
 
     @Bindable
     public String getName() {
@@ -30,7 +36,11 @@ public class NameViewModel extends BaseObservable{
     }
 
     public void onClickEnter(View view) {
-        Log.i("hi", "enter clicked. Name = " + getName());
+        if (name == null || name.isEmpty()) {
+            nameView.showNameError();
+        } else {
+            nameView.gotoBeerView();
+        }
     }
 
     public TextWatcher getNameTextWatcher() {

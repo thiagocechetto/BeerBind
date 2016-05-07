@@ -22,16 +22,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@{nameViewModel.nameHintText}"
-            app:addTextChangedListener="@{nameViewModel.nameTextWatcher}"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            app:addTextChangedListener="@{nameViewModel.nameTextWatcher}" />
 
 
         <Button
             android:id="@+id/button_enter"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Enter"
             android:onClick="@{nameViewModel.onClickEnter}"
+            android:text="Enter"
             android:textAllCaps="true" />
 
     </LinearLayout>
