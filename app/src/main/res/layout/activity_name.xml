@@ -22,6 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@{nameViewModel.nameHintText}"
+            android:singleLine="true"
             android:textAlignment="center"
             app:addTextChangedListener="@{nameViewModel.nameTextWatcher}" />
 

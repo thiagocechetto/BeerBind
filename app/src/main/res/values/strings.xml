@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">BeerBind</string>
+
+    <string name="name_error_message">Nome inválido</string>
+    <string name="name_hint_text">Digite seu nome aqui</string>
+    <string name="name_enter_button_text">Enter</string>
+
+    <string name="beer_count_label">Quantas cervejas você bebeu?</string>
 </resources>

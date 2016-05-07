@@ -8,11 +8,12 @@ import android.util.Log;
 import android.view.View;
 
 import com.arctouch.beerbind.BR;
+import com.arctouch.beerbind.R;
 
 public class NameViewModel extends BaseObservable {
 
-    public final String nameHintText = "Digite seu nome aqui"; //TODO get from resources
-    public final String enterButtonText = "Enter"; //TODO get from resources
+    public final int nameHintText = R.string.name_hint_text;
+    public final int enterButtonText = R.string.name_enter_button_text;
 
     private NameView nameView;
     private String name;

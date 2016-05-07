@@ -22,7 +22,7 @@ public class NameActivity extends AppCompatActivity implements NameView {
 
     @Override
     public void showNameError() {
-        Toast.makeText(this, "Nome inválido", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, R.string.name_error_message, Toast.LENGTH_SHORT).show();
     }
 
     @Override
