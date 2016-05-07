@@ -27,26 +27,26 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="numberDecimal"
             android:gravity="end"
+            android:inputType="numberDecimal"
             android:text="@{beerViewModel.beerCountText}"
-            app:addTextChangedListener="@{beerViewModel.beerCountTextWatcher}"
-            />
+            app:addTextChangedListener="@{beerViewModel.beerCountTextWatcher}" />
 
         <SeekBar
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:max="20"
-            app:progress="@{beerViewModel.beerCount}"
             app:onSeekBarChangeListener="@{beerViewModel.beerCountSeekListener}"
+            app:progress="@{beerViewModel.beerCount}"
 
             />
 
         <ImageView
+            android:id="@+id/beer_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="30dp"
-            android:background="@color/colorAccent"/>
+            app:imageUrl="@{beerViewModel.imageUrl}" />
 
     </LinearLayout>
 

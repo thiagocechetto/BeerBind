@@ -7,15 +7,20 @@ import android.databinding.BindingAdapter;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.SeekBar;
 
 import com.arctouch.beerbind.BR;
+import com.bumptech.glide.Glide;
 
 public class BeerViewModel extends BaseObservable {
 
-    private String beerCountLabel = "Quantas cervejas você bebeu?";
+    private String beerCountLabel = "Quantas cervejas você bebeu?"; //TODO get from resources
 
     private int beerCount = 7;
+
+    public String image1 = "http://cdn.coresites.factorymedia.com/cooler_new/wp-content/uploads/2015/10/drunk_homer.jpg";
+    public String image2 = "https://pbs.twimg.com/profile_images/378800000372208922/89f4942fb278ba0c5316f6828d59c313_400x400.jpeg";
 
     @Bindable
     public int getBeerCount() {
@@ -26,6 +31,7 @@ public class BeerViewModel extends BaseObservable {
         this.beerCount = beerCount;
         notifyPropertyChanged(BR.beerCount);
         notifyPropertyChanged(BR.beerCountText);
+        notifyPropertyChanged(BR.imageUrl);
     }
 
     @Bindable
@@ -86,8 +92,20 @@ public class BeerViewModel extends BaseObservable {
         };
     }
 
+    @Bindable
+    public String getImageUrl() {
+        return beerCount % 2 == 0 ? image1 : image2;
+    }
+
     @BindingAdapter("bind:onSeekBarChangeListener")
     public static void setOnSeekBarChangeListener(SeekBar seekBar, SeekBar.OnSeekBarChangeListener onSeekBarChangeListener) {
         seekBar.setOnSeekBarChangeListener(onSeekBarChangeListener);
+    }
+
+    @BindingAdapter("bind:imageUrl")
+    public static void loadImage(ImageView imageView, String url) {
+        Glide.with(imageView.getContext())
+                .load(url)
+                .into(imageView);
     }
 }
