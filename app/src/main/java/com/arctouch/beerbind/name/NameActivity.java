@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 import com.arctouch.beerbind.R;
-import com.arctouch.beerbind.beer.BeerActivity;
+import com.arctouch.beerbind.beer.BeerCountActivity;
 import com.arctouch.beerbind.databinding.ActivityNameBinding;
 
 public class NameActivity extends AppCompatActivity implements NameView {
@@ -27,7 +27,7 @@ public class NameActivity extends AppCompatActivity implements NameView {
 
     @Override
     public void gotoBeerView() {
-        Intent intent = new Intent(this, BeerActivity.class);
+        Intent intent = new Intent(this, BeerCountActivity.class);
         startActivity(intent);
     }
 }

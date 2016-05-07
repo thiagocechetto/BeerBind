@@ -6,29 +6,28 @@ import android.databinding.Bindable;
 import android.databinding.BindingAdapter;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 
 import com.arctouch.beerbind.BR;
 import com.bumptech.glide.Glide;
 
-public class BeerViewModel extends BaseObservable {
+public class BeerCountViewModel extends BaseObservable {
 
     private String beerCountLabel = "Quantas cervejas você bebeu?"; //TODO get from resources
-    private BeerModel beerModel;
+    private BeerCountModel beerCountModel;
 
-    public BeerViewModel(BeerModel beerModel) {
-        this.beerModel = beerModel;
+    public BeerCountViewModel(BeerCountModel beerCountModel) {
+        this.beerCountModel = beerCountModel;
     }
 
     @Bindable
     public int getBeerCount() {
-        return beerModel.getBeerCount();
+        return beerCountModel.getBeerCount();
     }
 
     public void setBeerCount(int beerCount) {
-        this.beerModel.setBeerCount(beerCount);
+        this.beerCountModel.setBeerCount(beerCount);
         notifyPropertyChanged(BR.beerCount);
         notifyPropertyChanged(BR.beerCountText);
         notifyPropertyChanged(BR.imageUrl);
@@ -36,16 +35,11 @@ public class BeerViewModel extends BaseObservable {
 
     @Bindable
     public String getBeerCountText() {
-        return Integer.toString(beerModel.getBeerCount());
+        return Integer.toString(beerCountModel.getBeerCount());
     }
 
     public String getBeerCountLabel() {
         return beerCountLabel;
-    }
-
-
-    public String getDrunkImageUrl() {
-        return null;
     }
 
     public TextWatcher getBeerCountTextWatcher() {
@@ -94,7 +88,7 @@ public class BeerViewModel extends BaseObservable {
 
     @Bindable
     public String getImageUrl() {
-        return beerModel.getBeerContImageUrl();
+        return beerCountModel.getBeerContImageUrl();
     }
 
     @BindingAdapter("bind:onSeekBarChangeListener")

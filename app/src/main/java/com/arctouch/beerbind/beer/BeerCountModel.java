@@ -1,7 +1,7 @@
 package com.arctouch.beerbind.beer;
 
 
-public class BeerModel {
+public class BeerCountModel {
 
     private static final String URL_BEER_1 = "https://raw.githubusercontent.com/gfendres/ractdc2016/master/RACTDC2016/Assets.xcassets/BeerImages/beerImage1.imageset/beerImage1.jpg";
     private static final String URL_BEER_2 = "https://raw.githubusercontent.com/gfendres/ractdc2016/master/RACTDC2016/Assets.xcassets/BeerImages/beerImage2.imageset/beerImage2.jpg";

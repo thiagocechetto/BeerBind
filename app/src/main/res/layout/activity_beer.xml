@@ -6,7 +6,7 @@
 
         <variable
             name="beerViewModel"
-            type="com.arctouch.beerbind.beer.BeerViewModel" />
+            type="com.arctouch.beerbind.beer.BeerCountViewModel" />
     </data>
 
     <LinearLayout xmlns:tools="http://schemas.android.com/tools"
