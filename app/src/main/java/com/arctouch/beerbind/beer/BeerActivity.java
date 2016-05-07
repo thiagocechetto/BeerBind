@@ -14,7 +14,7 @@ public class BeerActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ActivityBeerBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_beer);
-        BeerViewModel beerViewModel = new BeerViewModel();
+        BeerViewModel beerViewModel = new BeerViewModel(new BeerModel());
         binding.setBeerViewModel(beerViewModel);
     }
 }

@@ -16,19 +16,19 @@ import com.bumptech.glide.Glide;
 public class BeerViewModel extends BaseObservable {
 
     private String beerCountLabel = "Quantas cervejas você bebeu?"; //TODO get from resources
+    private BeerModel beerModel;
 
-    private int beerCount = 7;
-
-    public String image1 = "http://cdn.coresites.factorymedia.com/cooler_new/wp-content/uploads/2015/10/drunk_homer.jpg";
-    public String image2 = "https://pbs.twimg.com/profile_images/378800000372208922/89f4942fb278ba0c5316f6828d59c313_400x400.jpeg";
+    public BeerViewModel(BeerModel beerModel) {
+        this.beerModel = beerModel;
+    }
 
     @Bindable
     public int getBeerCount() {
-        return beerCount;
+        return beerModel.getBeerCount();
     }
 
     public void setBeerCount(int beerCount) {
-        this.beerCount = beerCount;
+        this.beerModel.setBeerCount(beerCount);
         notifyPropertyChanged(BR.beerCount);
         notifyPropertyChanged(BR.beerCountText);
         notifyPropertyChanged(BR.imageUrl);
@@ -36,7 +36,7 @@ public class BeerViewModel extends BaseObservable {
 
     @Bindable
     public String getBeerCountText() {
-        return Integer.toString(beerCount);
+        return Integer.toString(beerModel.getBeerCount());
     }
 
     public String getBeerCountLabel() {
@@ -94,7 +94,7 @@ public class BeerViewModel extends BaseObservable {
 
     @Bindable
     public String getImageUrl() {
-        return beerCount % 2 == 0 ? image1 : image2;
+        return beerModel.getBeerContImageUrl();
     }
 
     @BindingAdapter("bind:onSeekBarChangeListener")
